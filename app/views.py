@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -6,8 +6,10 @@ from django.contrib.auth.models import User
 
 def registeredusers(request):
     use = User.objects.all()
-    context = {'use': use}
-    username = request.POST.get('username')
-    if User.objects.filter(username=username).exists():
-        use = User.objects.filter(username=username)
-    return render(request, 'registeredusers.html', context)
+    return render(request, 'registeredusers.html', {'use': use})
+
+
+def delete(request, id):
+    use = User.objects.get(id=id)
+    use.delete()
+    return redirect('registeredusers')
