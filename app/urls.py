@@ -18,6 +18,8 @@ from app import views
 
 urlpatterns = [
     re_path(r'^registeredusers/', views.registeredusers, name='registeredusers'),
+    re_path(r'^addmodel/', views.addmodel, name='addmodel'),
+    re_path(r'^createmodel/', views.createmodel, name='createmodel'),
     re_path(r'^/delete/(?P<id>\d+)/', views.delete, name='delete'),
 
 
