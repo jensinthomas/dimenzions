@@ -21,12 +21,13 @@
                           {% csrf_token %}
                           <div class="row">
                             <div class="col-md-10">
-                              <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search User"/>
+                              <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search User" style="width:100%"/>
                             </div>
                             <button type="submit" class="btn btn-primary">
                               Search
                             </button>
                           </div><br>
+                          <div class="col-md-lg-6 ">
                           <th>Username</th>
                           <th>E-mail</th>
                           <th>Joining Date</th>
@@ -39,11 +40,11 @@
                         <tr>
                           <td id="username2">{{i.username}}</td>
                           <td>{{i.email}}</td>
-                          <td>{{i.date_joined}}</td>
+                          <td>{{i.date_joined|date:"d-m-Y"}}</td>
                           <td>
                             <a href="{% url 'delete' i.id %}">
-                                <button type="button" class="btn btn-danger">
-                                    <i class="icon-delete menu-icon"></i>
+                                <button type="button" class="btn btn-outline-danger">
+                                    <i class="icon-trash menu-icon"></i>
                                   Delete
                                 </button>
                               </a>
@@ -52,6 +53,7 @@
                       </tbody>
                       {% endfor %}
                     </table>
+                  </div>
                   </div>
                   <script>
                     function myFunction() {
