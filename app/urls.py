@@ -18,7 +18,7 @@ from app import views
 
 urlpatterns = [
     re_path(r'^registeredusers/', views.registeredusers, name='registeredusers'),
-    re_path(r'^/delete/(?P<id>\d+)/', views.delete, name='delete'),
+    re_path(r'^delete/(?P<reg_id>\d+)/', views.delete, name='delete'),
 
 
 ]

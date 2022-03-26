@@ -31,7 +31,7 @@
                           <th>Username</th>
                           <th>E-mail</th>
                           <th>Joining Date</th>
-                          <th></th>
+                          <th>Action</th>
                         </tr>
                       </thead>
 
@@ -40,9 +40,9 @@
                         <tr>
                           <td id="username2">{{i.username}}</td>
                           <td>{{i.email}}</td>
-                          <td>{{i.date_joined|date:"d-m-Y"}}</td>
+                          <td>{{i.joining_date|date:"d-m-Y"}}</td>
                           <td>
-                            <a href="{% url 'delete' i.id %}">
+                            <a href="{% url 'delete' i.reg_id %}">
                                 <button type="button" class="btn btn-outline-danger">
                                     <i class="icon-trash menu-icon"></i>
                                   Delete

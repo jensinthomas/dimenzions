@@ -6,11 +6,11 @@ from .models import *
 
 
 def registeredusers(request):
-    use = User.objects.all()
+    use = Admin_register.objects.all()
     return render(request, 'registeredusers.html', {'use': use})
 
 
-def delete(request, id):
-    use = User.objects.get(id=id)
+def delete(request, reg_id):
+    use = Admin_register.objects.get(reg_id=reg_id)
     use.delete()
     return redirect('registeredusers')
